@@ -514,8 +514,8 @@
                 originalY = touches.pageY;
             }
 
-            window.addEventListener('mousemove', mouseMove);
-            window.addEventListener('touchmove', mouseMove);
+            window.addEventListener('mousemove', mouseMove, { passive: false });
+            window.addEventListener('touchmove', mouseMove, { passive: false });
             window.addEventListener('mouseup', mouseUp);
             window.addEventListener('touchend', mouseUp);
             document.body.style[CSS_USERSELECT] = 'none';
@@ -661,7 +661,7 @@
         self.elements.zoomer.addEventListener('change', change);
 
         if (self.options.mouseWheelZoom) {
-            self.elements.boundary.addEventListener('mousewheel', scroll);
+            self.elements.boundary.addEventListener('mousewheel', scroll, { passive: false });
             self.elements.boundary.addEventListener('DOMMouseScroll', scroll);
         }
     }
@@ -901,8 +901,8 @@
             }
             toggleGrabState(isDragging);
             transform = Transform.parse(self.elements.preview);
-            window.addEventListener('mousemove', mouseMove);
-            window.addEventListener('touchmove', mouseMove);
+            window.addEventListener('mousemove', mouseMove, { passive: false });
+            window.addEventListener('touchmove', mouseMove, { passive: false });
             window.addEventListener('mouseup', mouseUp);
             window.addEventListener('touchend', mouseUp);
             document.body.style[CSS_USERSELECT] = 'none';

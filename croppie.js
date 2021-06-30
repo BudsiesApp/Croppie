@@ -516,7 +516,7 @@
 
             window.addEventListener('mousemove', mouseMove, { passive: false });
             window.addEventListener('touchmove', mouseMove, { passive: false });
-            window.addEventListener('mouseup', mouseUp);
+            window.addEventListener('pointerup', mouseUp);
             window.addEventListener('touchend', mouseUp);
             document.body.style[CSS_USERSELECT] = 'none';
         }
@@ -581,7 +581,7 @@
             isDragging = false;
             window.removeEventListener('mousemove', mouseMove);
             window.removeEventListener('touchmove', mouseMove);
-            window.removeEventListener('mouseup', mouseUp);
+            window.removeEventListener('pointerup', mouseUp);
             window.removeEventListener('touchend', mouseUp);
             document.body.style[CSS_USERSELECT] = '';
         }
@@ -903,7 +903,7 @@
             transform = Transform.parse(self.elements.preview);
             window.addEventListener('mousemove', mouseMove, { passive: false });
             window.addEventListener('touchmove', mouseMove, { passive: false });
-            window.addEventListener('mouseup', mouseUp);
+            window.addEventListener('pointerup', mouseUp);
             window.addEventListener('touchend', mouseUp);
             document.body.style[CSS_USERSELECT] = 'none';
             vpRect = self.elements.viewport.getBoundingClientRect();
@@ -956,7 +956,7 @@
             toggleGrabState(isDragging);
             window.removeEventListener('mousemove', mouseMove);
             window.removeEventListener('touchmove', mouseMove);
-            window.removeEventListener('mouseup', mouseUp);
+            window.removeEventListener('pointerup', mouseUp);
             window.removeEventListener('touchend', mouseUp);
             document.body.style[CSS_USERSELECT] = '';
             _updateCenterPoint.call(self);

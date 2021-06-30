@@ -587,13 +587,13 @@
         }
 
         if (vr) {
-            vr.addEventListener('mousedown', mouseDown);
-            vr.addEventListener('touchstart', mouseDown);
+            vr.addEventListener('mousedown', mouseDown, { passive: false });
+            vr.addEventListener('touchstart', mouseDown, { passive: false });
         }
 
         if (hr) {
-            hr.addEventListener('mousedown', mouseDown);
-            hr.addEventListener('touchstart', mouseDown);
+            hr.addEventListener('mousedown', mouseDown, { passive: false });
+            hr.addEventListener('touchstart', mouseDown, { passive: false });
         }
 
         this.elements.boundary.appendChild(wrap);
@@ -964,9 +964,9 @@
             originalDistance = 0;
         }
 
-        self.elements.overlay.addEventListener('mousedown', mouseDown);
+        self.elements.overlay.addEventListener('mousedown', mouseDown, { passive: false });
         self.elements.viewport.addEventListener('keydown', keyDown);
-        self.elements.overlay.addEventListener('touchstart', mouseDown);
+        self.elements.overlay.addEventListener('touchstart', mouseDown, { passive: false });
     }
 
     function _updateOverlay() {
